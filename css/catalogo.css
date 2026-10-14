@@ -1,0 +1,379 @@
+/* ==========================================================================
+   AGREGAR AL FINAL DE TU ARCHIVO INICIO.CSS: ESTILOS EXCLUSIVOS DEL CATÁLOGO
+   ========================================================================== */
+/* --- Estilos Base y Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 0 20px 40px;
+}
+
+/* --- Cabecera (Compartida) --- */
+.main-header {
+    background-color: #1a252f;
+    color: #fff;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-radius: 0 0 8px 8px;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.brand-title-top {
+    font-size: 12px;
+    color: #bdc3c7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.top-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.phone {
+    font-size: 14px;
+}
+
+.phone-number {
+    color: #e74c3c;
+}
+
+.utility-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-utility {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    background-color: #34495e;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+.btn-utility:hover {
+    background-color: #3498db;
+}
+/* Reset General */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa; /* Fondo gris claro idéntico al Index */
+    padding: 0 0 50px 0;
+}
+
+/* --- Cabecera Compartida con el Index --- */
+.main-header {
+    background-color: #1a252f; /* Azul oscuro de tu cabecera original */
+    color: #fff;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #3498db; /* Azul eléctrico característico */
+}
+
+.brand-title-top {
+    font-size: 11px;
+    color: #bdc3c7;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 2px;
+}
+
+.utility-buttons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    background-color: #34495e;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+.utility-buttons a:hover {
+    background-color: #3498db;
+}
+
+/* Contenedor principal de doble columna */
+.catalog-page-layout {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* --- Barra Lateral (Canales de Atención) --- */
+.catalog-sidebar {
+    width: 280px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.sidebar-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a252f;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f8f9fa;
+    padding-bottom: 8px;
+}
+
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    font-size: 13.5px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.contact-list li .icon {
+    font-size: 14px;
+}
+
+.contact-data {
+    color: #555;
+    display: block;
+}
+
+/* --- Bloque de Contenido Derecho --- */
+.catalog-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Barra de Categorías Horizontal */
+.catalog-categories-bar {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.category-pill {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    border-radius: 6px;
+    background: #f8f9fa;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.category-pill:hover, 
+.category-pill.active {
+    background-color: #ffffff;
+    color: #3498db;
+    border-color: #3498db;
+    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.1);
+}
+
+/* Grilla de Productos */
+.catalog-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjeta de Producto */
+.catalog-product-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.catalog-product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.catalog-product-image {
+    padding: 20px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.catalog-product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.catalog-product-info {
+    padding: 15px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.catalog-product-info h4 {
+    font-size: 14px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    min-height: 40px; /* Alineación vertical idéntica para los títulos cortos/largos */
+}
+
+.catalog-offer-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 12px;
+}
+
+/* Botón de compra moderno (Estilo Verde de la Imagen 2 pulido) */
+.btn-catalog-buy {
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn-catalog-buy:hover {
+    background-color: #27ae60;
+}
+
+/* Ajuste Responsivo Básico */
+@media (max-width: 768px) {
+    .catalog-page-layout {
+        flex-direction: column;
+    }
+    .catalog-sidebar {
+        width: 100%;
+    }
+    .catalog-categories-bar {
+        flex-direction: column;
+    }
+}
+
+
+
+/* Contenedor del desplegable */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Panel flotante (oculto por defecto) */
+.lang-panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff00;
+    min-width: 120px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    margin-top: 8px;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid #e0e0e000;
+}
+
+/* Clase que mostrará el panel mediante JavaScript */
+.lang-panel.show {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Opciones de idioma */
+.lang-option {
+    color: #333333;
+    padding: 32px 32px;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: left;
+    transition: background-color 0.2s;
+}
+
+.lang-option:hover {
+    background-color: #f4f6f9;
+    color: #3498db;
+}

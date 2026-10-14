@@ -1,0 +1,385 @@
+/* --- Reseteo de estilos básicos --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #444;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1400px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* --- Estructura de la Cabecera Oscura --- */
+.main-header {
+    background-color: #1e2732;
+    color: #ffffff;
+    padding: 14px 0;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.brand-subtitle {
+    font-size: 11px;
+    color: #8899a6;
+    margin-top: -2px;
+}
+
+.top-info {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.phone {
+    font-size: 13px;
+}
+
+.phone-number {
+    color: #ff5252;
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+.utility-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-utility {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    background-color: #34495e;
+    padding: 6px 16px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+.btn-utility:hover {
+    background-color: #3498db;
+}
+
+.login-btn {
+    background-color: #4b3b63;
+}
+
+.login-btn:hover {
+    background-color: #5c497a;
+}
+
+/* --- Contenedor General bajo la cabecera --- */
+.main-layout {
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+/* --- Pestañas Superiores (3 Columnas de Ancho Completo) --- */
+.categories-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    margin-bottom: 25px;
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+     text-decoration: none !important;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.tab-item.active {
+    border-bottom: 2px solid #ff5252; /* Línea indicadora roja */
+}
+
+.tab-icon {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.tab-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: #555555 !important;
+}
+
+/* --- Alineación del cuerpo inferior (Dos Columnas Simétricas) --- */
+.layout-body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 15px;
+    align-items: stretch;
+}
+
+/* --- Cuadro Lateral Izquierdo: Canales de atención --- */
+.sidebar-channels {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.channels-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.channels-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.channels-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.channel-icon {
+    font-size: 14px;
+    color: #ff5252;
+    margin-top: 2px;
+}
+
+.channel-info strong {
+    display: block;
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.channel-info p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+}
+
+/* --- Cuadrícula de productos (Cajas idénticas a Firewall) --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.product-card {
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    padding: 25px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Etiquetas de Descuento en Verde */
+.badge-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 5;
+}
+
+.badge.discount {
+    background-color: #2ecc71;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+/* Contenedor de la foto del servidor NAS */
+.product-img-box {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.product-img-box img {
+    max-height: 100%;
+    max-width: 130px;
+    object-fit: contain;
+}
+
+/* Textos informativos */
+.product-details {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.product-title {
+    font-size: 12px;
+    font-weight: normal;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    min-height: 54px; /* Altura forzada fija para mantener simétricas las tarjetas */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-specs {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 10px;
+    min-height: 16px;
+}
+
+.product-price {
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* --- Botón Verde de Compra --- */
+.btn-buy {
+    width: 100%;
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: background-color 0.2s;
+}
+
+.btn-buy:hover {
+    background-color: #218838;
+}
+
+.cart-icon {
+    font-size: 14px;
+}
+/* Contenedor del desplegable */
+
+.lang-dropdown {
+
+  position: relative;
+
+  display: inline-block;
+
+}
+
+
+
+/* Panel flotante (oculto por defecto) */
+
+.lang-panel {
+
+  display: none;
+
+  position: absolute;
+
+  top: 100%;
+
+  right: 0;
+
+  background-color: #ffffff;
+
+  min-width: 120px;
+
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+
+  border-radius: 6px;
+
+  margin-top: 8px;
+
+  z-index: 1000;
+
+  overflow: hidden;
+
+  border: 1px solid #e0e0e0;
+
+}
+
+
+
+/* Clase que mostrará el panel mediante JavaScript */
+
+.lang-panel.show {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+
+/* Opciones de idioma */
+
+.lang-option {
+
+  color: #333333;
+
+  padding: 10px 16px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  text-align: left;
+
+  transition: background-color 0.2s;
+
+}
+
+
+
+.lang-option:hover {
+
+  background-color: #f4f6f9;
+
+  color: #3498db;
+
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPeru - Equipment Catalog</title>
+    <!-- Subimos un nivel con ../ para buscar el CSS compartido -->
+    <link rel="stylesheet" href="css/catalogo EN.css">
+</head>
+<body>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-wrap">
+            <div class="brand">
+                <span class="brand-title">TechPeru</span>
+                <span class="brand-title-top">Equipment Catalog</span>
+            </div>
+            <div class="top-info">
+                <span class="phone">Sales WhatsApp: <strong class="phone-number">🚨 XXX.XXX.XXX</strong></span>
+                <nav class="utility-buttons">
+                    <!-- Dropdown de Idioma -->
+                    <div class="lang-dropdown">
+                        <button class="btn-utility" id="langBtn">🌐 Language</button>
+                        <div class="lang-panel" id="langPanel">
+                            <!-- El enlace a Español sale de la carpeta /en/ -->
+                            <a href="../catalogo.html" class="lang-option">Español</a>
+                            <a href="catalogo.html" class="lang-option">English</a>
+                        </div>
+                    </div>
+                    <a href="../formulario.html" class="btn-utility">✉️ Contact</a>
+                    <a href="../catalogo.html" class="btn-utility">🛒 Quote</a>
+                    <a href="../login.html" class="btn-utility">👤 Login</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Two-column layout -->
+    <div class="catalog-page-layout">
+        
+        <!-- Customer Service (Left Sidebar) -->
+        <aside class="catalog-sidebar">
+            <h3 class="sidebar-title">Customer Service</h3>
+            <ul class="contact-list">
+                <li><span class="icon">✉️</span> <strong>Email:</strong> <span class="contact-data">prueba@senati.pe</span></li>
+                <li><span class="icon">📞</span> <strong>Phone:</strong> <span class="contact-data">xxx xxx xxx</span></li>
+                <li><span class="icon">💬</span> <strong>WhatsApp:</strong> <span class="contact-data">+51 xxx xxx xxx</span></li>
+                <li><span class="icon">📍</span> <strong>Location:</strong> <span class="contact-data">Mi casa padre</span></li>
+                <li><span class="icon">🌐</span> <strong>Social Media:</strong> <span class="contact-data">follow me</span></li>
+            </ul>
+        </aside>
+
+        <!-- Right Content Block -->
+        <main class="catalog-main-content">
+            
+            <!-- Horizontal Categories Bar -->
+            <div class="catalog-categories-bar">
+                <div class="category-pill active">🔥 Network Firewall</div>
+                <div class="category-pill">📱 Device Blocker</div>
+                <div class="category-pill">👤 Biometric Equipment</div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="catalog-products-grid">
+                
+                <!-- Product 1 -->
+                <article class="catalog-product-card">
+                    <div class="catalog-product-image">
+                        <img src="img/Fortinet-FortiGate-40F-Firewall.jpeg" alt="Fortinet Firewall">
+                    </div>
+                    <div class="catalog-product-info">
+                        <h4>Fortinet Firewall</h4>
+                        <p class="catalog-offer-price">S/. 2,300.00</p>
+                        <button class="btn-catalog-buy">Buy Now</button>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="catalog-product-card">
+                    <div class="catalog-product-image">
+                        <img src="img/Unblocker(1).jpg" alt="USB Data Blocker">
+                    </div>
+                    <div class="catalog-product-info">
+                        <h4>USB Data Transfer Blocker</h4>
+                        <p class="catalog-offer-price">S/. 40.00</p>
+                        <button class="btn-catalog-buy">Buy Now</button>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="catalog-product-card">
+                    <div class="catalog-product-image">
+                        <img src="img/LECTORHUELLA(1).jpg" alt="Biometric Reader">
+                    </div>
+                    <div class="catalog-product-info">
+                        <h4>Biometric Scanner</h4>
+                        <p class="catalog-offer-price">S/. 300.00</p>
+                        <button class="btn-catalog-buy">Buy Now</button>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="catalog-product-card">
+                    <div class="catalog-product-image">
+                        <img src="img/security-keys(1).jpg" alt="Security Key">
+                    </div>
+                    <div class="catalog-product-info">
+                        <h4>Security Key Token</h4>
+                        <p class="catalog-offer-price">S/. 267.00</p>
+                        <button class="btn-catalog-buy">Buy Now</button>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Cargamos los scripts compartidos subiendo un nivel -->
+    <script src="js/catalogo EN.js"></script>
+</body>
+</html>

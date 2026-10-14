@@ -1,0 +1,313 @@
+/* --- Estilos Base y Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 0 20px 40px;
+}
+
+/* --- Cabecera (Compartida) --- */
+.main-header {
+    background-color: #1a252f;
+    color: #fff;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-radius: 0 0 8px 8px;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.brand-title-top {
+    font-size: 12px;
+    color: #bdc3c7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.top-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.phone {
+    font-size: 14px;
+}
+
+.phone-number {
+    color: #e74c3c;
+}
+
+.utility-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-utility {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    background-color: #34495e;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+.btn-utility:hover {
+    background-color: #3498db;
+}
+/* Reset General */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa; /* Fondo gris claro idéntico al Index */
+    padding: 0 0 50px 0;
+}
+
+/* --- Cabecera Compartida con el Index --- */
+.main-header {
+    background-color: #1a252f; /* Azul oscuro de tu cabecera original */
+    color: #fff;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #3498db; /* Azul eléctrico característico */
+}
+
+.brand-title-top {
+    font-size: 11px;
+    color: #bdc3c7;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 2px;
+}
+
+.utility-buttons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    background-color: #34495e;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+.utility-buttons a:hover {
+    background-color: #3498db;
+}
+
+/* --- Tarjeta del Formulario --- */
+.form-container {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Banner interno con el azul oscuro de Servidores */
+.form-banner-header {
+    background-color: #1a365d; 
+    color: white;
+    padding: 25px 30px;
+}
+
+.form-banner-header h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.form-banner-header p {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+fieldset {
+    border: none;
+    padding: 30px;
+}
+
+/* Maquetación de los bloques de preguntas sin usar <br/> */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.required-mark {
+    color: #e74c3c;
+}
+
+/* --- Cajas de Texto, Números y Selectores --- */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f8fafc;
+    transition: all 0.25s ease;
+    font-family: inherit;
+}
+
+/* Efecto de iluminación azul activa al hacer clic */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+    background-color: #ffffff;
+}
+
+/* Contenedores organizadores de Filas (Radio y Checkbox) */
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fafafa;
+    padding: 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+}
+
+.inline-option {
+    font-weight: normal !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 !important;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Caja especial decorativa para el área geográfica */
+.location-box {
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 10px 0 25px 0;
+}
+
+/* --- Botonera del Catálogo --- */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+/* Botón Enviar con validación (Mismo azul claro del index) */
+.btn-submit-main {
+    background-color: #3498db;
+    color: white;
+    flex: 2;
+    min-width: 150px;
+}
+
+.btn-submit-main:hover {
+    background-color: #2980b9;
+}
+
+/* Botón Enviar sin Validar (Gris oscuro corporativo) */
+.btn-submit-fast {
+    background-color: #34495e;
+    color: white;
+}
+
+.btn-submit-fast:hover {
+    background-color: #2c3e50;
+}
+
+/* Botón Restablecer */
+.btn-reset-form {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-reset-form:hover {
+    background-color: #7f8c8d;
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active {
+    transform: scale(0.98);
+}

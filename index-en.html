@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TechPeru - Frame 1: Home</title>
+  <link rel="stylesheet" href="css/index EN.css">
+</head>
+<body>
+
+  <!-- Contenedor para Notificaciones Flotantes (Toasts) -->
+  <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px;"></div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container header-wrap">
+      <div class="brand">
+        <span class="brand-title">TechPeru</span>
+        <span class="brand-title-top">Home</span>
+      </div>
+      <div class="top-info">
+        <span class="phone">Sales WhatsApp: <strong class="phone-number">🚨 XXX.XXX.XXX</strong></span>
+        <nav class="utility-buttons">
+          
+          <!-- Language Dropdown -->
+          <div class="lang-dropdown">
+            <button class="btn-utility" id="langBtn">🌐 Language</button>
+            <div class="lang-panel" id="langPanel">
+              <a href="index.html" class="lang-option" data-lang="es">Español</a>
+              <a href="index-en.html" class="lang-option" data-lang="en">English</a>
+            </div>
+          </div>
+          
+          <a href="formulario.html" class="btn-utility">✉️ Contact</a>
+          <a href="catalogo.html" class="btn-utility">🛒 Quote</a>
+          <a href="login.html" class="btn-utility">👤 Login</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Bar and Partners -->
+  <section class="search-bar-section">
+    <div class="partners">
+      <div class="partners-container">
+        <span class="partners-title">Our Partners:</span>
+        <div class="partners-tags">
+          <span class="partner-badge dell">Dell EMC</span>
+          <span class="partner-badge hp">Hewlett Packard</span>
+          <span class="partner-badge qnap">QNAP</span>
+          <span class="partner-badge fortinet">Fortinet</span>
+          <span class="partner-badge microsoft">Microsoft</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="search-form">
+      <label for="search-input">Search store: </label>
+      <input type="text" id="search-input" placeholder="What are you looking for?">
+      <button type="submit" class="btn-search">Search</button>
+    </form>
+    
+    <!-- Mensaje oculto de no resultados requerido por el JS -->
+    <div id="no-results-message" style="display: none; color: #e74c3c; text-align: center; font-size: 14px; margin-top: 10px;">No products match your search.</div>
+  </section>
+
+  <!-- Servers Offers Banner -->
+  <section class="servers-section">
+    <div class="servers-banner-header">
+      <h2>Servers</h2>
+      <p>Security, efficiency and scalability for your business</p>
+    </div>
+     
+    <div class="servers-grid">
+      <article class="server-card">
+        <h3><img src="img/servidor dell.jpg" alt="server" width="150px" title="dell server"></h3>
+        <h3 class="server-title">Dell PowerEdge T160 Server</h3>
+        <p class="offer-price">Special Price: <b>S/. 7,999.00</b></p>
+        <!-- Botón requerido para los Toasts del JS -->
+        <button class="btn-search btn-cotizar-card" style="margin-top: 15px; width: 100%;">Add to Quote</button>
+      </article>
+
+      <article class="server-card">
+        <h3><img src="img/server lenovo.jpg" alt="serverL" width="150px" title="lenovo server"></h3>
+        <h3 class="server-title">Think System SR650 V4 Server</h3>
+        <p class="offer-price">Special Price: <b>S/. 27,999.00</b></p>
+        <button class="btn-search btn-cotizar-card" style="margin-top: 15px; width: 100%;">Add to Quote</button>
+      </article>
+
+      <article class="server-card">
+        <h3><img src="img/ServerHPE.jpg" alt="serverHPE" width="150px" title="HPE server"></h3>
+        <h3 class="server-title">HPE ProLiant DL340 Server</h3>
+        <p class="offer-price">Special Price: <b>S/. 45,499.00</b></p>
+        <button class="btn-search btn-cotizar-card" style="margin-top: 15px; width: 100%;">Add to Quote</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Categories Navigation -->
+  <nav class="categories-navigation" id="categories-nav">
+    <a href="servidores.html" class="nav-card"><h3><img src="img/serverlogo.jpg" alt="serverlogo" width="50px" title="server logo"></h3><span>Servers</span></a>
+    <a href="nas.html" class="nav-card"><h3><img src="img/NASlogo.jpg" alt="NASlogo" width="50px" title="NAS logo"></h3><span>NAS</span></a>
+    <a href="firewall.html" class="nav-card"><h3><img src="img/firewall logo.jpg" alt="firewall" width="50px" title="firewall logo"></h3><span>Firewall</span></a>
+    <a href="#" class="nav-card"><h3><img src="img/Redeslogo.jpg" alt="Redeslogo" width="50px" title="Networks logo"></h3><span>Networks</span></a>
+  </nav>
+
+  <!-- Script traducido en inglés -->
+  <script src="js/index.js"></script>
+</body>
+</html>
