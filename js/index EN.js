@@ -144,18 +144,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Control clicking language options
-    const langOptions = document.querySelectorAll('.lang-option');
-    langOptions.forEach(option => {
-        option.addEventListener('click', (event) => {
-            const seleccionado = option.getAttribute('data-lang');
-            // Al usar redirección directa por HREF Estrategia A, dejamos que actúe el enlace nativo
-            if (!option.getAttribute('href') || option.getAttribute('href') === '#') {
-                event.preventDefault();
-                cambiarIdiomaSitio(seleccionado);
-            }
-        });
+    // Controlar el clic en las opciones de idioma
+const langOptions = document.querySelectorAll('.lang-option');
+langOptions.forEach(option => {
+    option.addEventListener('click', (event) => {
+        // --- IMPORTANTE: NO pongas event.preventDefault() aquí ---
+        
+        // Cerramos el panel antes de que cargue la nueva página
+        if (langPanel) {
+            langPanel.classList.remove('show');
+        }
+        
+        // El navegador ahora sí ejecutará el "href" del enlace de manera natural
     });
+});
+
 });
 
 function cambiarIdiomaSitio(idioma) {

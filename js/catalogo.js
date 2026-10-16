@@ -45,19 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Controlar el clic en las opciones de idioma
-    const langOptions = document.querySelectorAll('.lang-option');
-    langOptions.forEach(option => {
-        option.addEventListener('click', (event) => {
-            event.preventDefault();
-            const seleccionado = option.getAttribute('data-lang');
-            
-            // Aquí ejecutaremos la lógica de cambio de idioma
-            cambiarIdiomaSitio(seleccionado);
-        });
+const langOptions = document.querySelectorAll('.lang-option');
+langOptions.forEach(option => {
+    option.addEventListener('click', (event) => {
+        // --- IMPORTANTE: NO pongas event.preventDefault() aquí ---
+        
+        // Cerramos el panel antes de que cargue la nueva página
+        if (langPanel) {
+            langPanel.classList.remove('show');
+        }
+        
+        // El navegador ahora sí ejecutará el "href" del enlace de manera natural
     });
 });
 
-function cambiarIdiomaSitio(idioma) {
-    alert(`Cambiando el sitio al idioma: ${idioma.toUpperCase()}`);
-    // Aquí implementas la estrategia elegida abajo
-}
+})
