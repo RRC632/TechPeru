@@ -418,3 +418,19 @@ body {
     background-color: #f4f6f9;
     color: #3498db;
 }
+/* --- Estilos para el enlace de la marca --- */
+.brand-link {
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+    display: flex;
+    flex-direction: column; /* Mantiene el título arriba y el subtítulo abajo */
+    cursor: pointer; /* Hace que aparezca la manito del ratón al pasar por encima */
+}
+
+/* Opcional: Si notas que el color cambia al hacer clic, esto asegura que mantengan sus colores originales */
+.brand-link .brand-title {
+    color: #3498db; /* Tu azul eléctrico característico */
+}
+
+.brand-link .brand-title-top {
+    color: #bdc3c7; /* Tu gris claro corporativo */
+}

@@ -1,4 +1,6 @@
-/* Estilos Generales y Reset */
+/* ==========================================================================
+   ESTILOS GENERALES Y RESET
+   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,18 +8,18 @@
 }
 
 body {
-    background-color: #f4f6f9;
-    font-family: sans-serif;
+    background-color: #f4f6f9; /* Fondo gris claro idéntico */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* ==========================================
-   TUS NUEVOS ESTILOS PARA EL ENCABEZADO
-   ========================================== */
+/* ==========================================================================
+   CABECERA COMPARTIDA (MAIN HEADER)
+   ========================================================================== */
 .main-header {
-    background-color: #1a252f; /* Azul oscuro de tu cabecera original */
+    background-color: #1a252f; /* Azul oscuro */
     color: #fff;
     padding: 20px 0;
     margin-bottom: 40px;
@@ -39,13 +41,13 @@ body {
     flex-direction: column;
 }
 
-.brand-title-top {
+.brand-title {
     font-size: 26px;
     font-weight: bold;
-    color: #3498db; /* Azul eléctrico característico */
+    color: #3498db; /* Azul eléctrico */
 }
 
-.brand-title {
+.brand-title-top {
     font-size: 11px;
     color: #bdc3c7;
     text-transform: uppercase;
@@ -53,25 +55,75 @@ body {
     margin-top: 2px;
 }
 
-.utility-buttons a {
+.utility-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.utility-buttons a, .btn-utility {
     color: #fff;
     text-decoration: none;
     font-size: 13px;
     background-color: #34495e;
     padding: 8px 16px;
+    border: none;
     border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
     transition: background 0.3s;
 }
 
-.utility-buttons a:hover {
+.utility-buttons a:hover, .btn-utility:hover {
     background-color: #3498db;
 }
 
-/* ==========================================
-   ESTILOS ADAPTADOS PARA EL LOGIN
-   ========================================== */
+/* ==========================================================================
+   MENÚ FLOTANTE DE IDIOMAS (INTERNACIONALIZACIÓN)
+   ========================================================================== */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-/* Contenedor flexible para centrar la tarjeta de login abajo del header */
+.lang-panel {
+    display: none; /* JS añade .show para activarlo */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff00; /* Fondo sólido */
+    min-width: 130px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    margin-top: 8px;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid #cbd5e100;
+}
+
+.lang-panel.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.lang-option {
+    color: #ffffff !important;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: left;
+    background: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.lang-option:hover {
+    background-color: #f1f5f9 !important;
+    color: #3498db !important;
+}
+
+/* ==========================================================================
+   ESTILOS DE LA TARJETA DE LOGIN
+   ========================================================================== */
 .login-wrapper {
     flex: 1;
     display: flex;
@@ -90,7 +142,7 @@ body {
 }
 
 .login-header {
-    background-color: #1a365d;
+    background-color: #1a365d; /* Azul de servidores */
     color: white;
     text-align: center;
     padding: 20px;
@@ -106,6 +158,8 @@ body {
 
 .form-group {
     margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group label {
@@ -122,11 +176,14 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #1a365d;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
 }
 
 .form-actions {
@@ -150,12 +207,17 @@ body {
     background-color: #2a4d7c;
 }
 
+.form-actions input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
 .error-message {
     color: #e53e3e;
     font-size: 13px;
     margin-top: 12px;
     text-align: center;
     min-height: 18px;
+    font-weight: 500;
 }
 
 .login-footer {
@@ -177,4 +239,21 @@ body {
 
 .login-footer p a:hover {
     text-decoration: underline;
+    color: #3498db;
+}
+/* --- Estilos para el enlace de la marca --- */
+.brand-link {
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+    display: flex;
+    flex-direction: column; /* Mantiene el título arriba y el subtítulo abajo */
+    cursor: pointer; /* Hace que aparezca la manito del ratón al pasar por encima */
+}
+
+/* Opcional: Si notas que el color cambia al hacer clic, esto asegura que mantengan sus colores originales */
+.brand-link .brand-title {
+    color: #3498db; /* Tu azul eléctrico característico */
+}
+
+.brand-link .brand-title-top {
+    color: #bdc3c7; /* Tu gris claro corporativo */
 }
