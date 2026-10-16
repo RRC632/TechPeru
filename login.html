@@ -2,63 +2,74 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechPeru - Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css"> <!-- O el nombre de tu archivo CSS -->
 </head>
 <body>
 
-    <!-- Nuevo Encabezado Corporativo -->
+    <!-- CABECERA CON BOTÓN DE IDIOMAS -->
     <header class="main-header">
         <div class="header-wrap">
             <div class="brand">
-                <span class="brand-title-top">TechPeru</span>
-                <span class="brand-title">Login</span>
+    <!-- El enlace envuelve al título y al subtítulo -->
+                    <a href="index.html" class="brand-link">
+                <span class="brand-title">TechPeru</span>
+                <span class="brand-title-top" class="lang-text" data-es="Login" data-en="Login Panel">Login</span>
+                    </a>
             </div>
-            <div class="top-info">
-                <div class="utility-buttons">
-                    <a href="index.html" class="btn-utility">🌐Volver al inicio</a>  
+            <div class="utility-buttons">
+                <a href="index.html" class="btn-utility lang-text" data-es="🌐Volver al inicio" data-en="🌐Back to Home">🌐Volver al inicio</a>
+                
+                <!-- Menú desplegable de Idiomas -->
+                <div class="lang-dropdown">
+                    <button id="langBtn" class="btn-utility">🌐 Idioma / Language</button>
+                    <div id="langPanel" class="lang-panel">
+                        <a href="#" class="lang-option" data-lang="es">Español</a>
+                        <a href="#" class="lang-option" data-lang="en">English</a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Contenedor del Login -->
-    <main class="login-wrapper">
+    <!-- CUERPO DE INICIAR SESIÓN -->
+    <div class="login-wrapper">
         <div class="login-container">
-            <header class="login-header">
-                <h2>Iniciar Sesión</h2>
-            </header>
-            
-            <section class="login-content">
-                <form id="loginForm" action="#">
+            <div class="login-header">
+                <h2 class="lang-text" data-es="Iniciar Sesión" data-en="Sign In">Iniciar Sesión</h2>
+            </div>
+            <div class="login-content">
+                <form id="loginForm">
+                    <!-- Usuario -->
                     <div class="form-group">
-                        <label for="user">Usuario / Correo:</label>
-                        <input type="text" id="user" placeholder="ejemplo@correo.com" required>
+                        <label for="user" class="lang-text" data-es="Usuario / Correo:" data-en="Username / Email:">Usuario / Correo:</label>
+                        <input type="text" id="user" required data-placeholder-es="Ingrese usuario" data-placeholder-en="Enter username" placeholder="Ingrese usuario">
                     </div>
                     
+                    <!-- Contraseña -->
                     <div class="form-group">
-                        <label for="pass">Contraseña:</label>
-                        <input type="password" id="pass" placeholder="Ingresa tu contraseña" required>
+                        <label for="pass" class="lang-text" data-es="Contraseña:" data-en="Password:">Contraseña:</label>
+                        <input type="password" id="pass" required data-placeholder-es="Ingrese contraseña" data-placeholder-en="Enter password" placeholder="Ingrese contraseña">
                     </div>
-                    
+
+                    <!-- Mensajes de Error Dinámicos -->
+                    <div id="errorMessage" class="error-message"></div>
+
+                    <!-- Botón Ingresar -->
                     <div class="form-actions">
-                        <input type="submit" value="Ingresar">
+                        <input type="submit" class="lang-text" data-es="Ingresar" data-en="Login" value="Ingresar">
                     </div>
                 </form>
-                <div id="errorMessage" class="error-message"></div>
-            </section>
-            
-            <footer class="login-footer">
+            </div>
+            <div class="login-footer">
                 <p>
-                    <a href="#">¿Olvidaste tu contraseña?</a>
-                    <a href="#">Regresar al Inicio</a>
+                    <a href="recuperar.html" class="lang-text" data-es="¿Olvilaste tu contraseña?" data-en="Forgot your password?">¿Olvilaste tu contraseña?</a>
+                    <a href="index.html" class="lang-text" data-es="Regresar al Inicio" data-en="Return to Home">Regresar al Inicio</a>
                 </p>
-            </footer>
+            </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Vinculación del archivo JavaScript -->
     <script src="js/login.js"></script>
 </body>
 </html>

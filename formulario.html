@@ -1,158 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechPeru - Formulario de Contacto</title>
-  <!-- Conexión con el archivo CSS externo -->
-  <link rel="stylesheet" href="css/formulario.css">
+    <meta charset="UTF-8">
+    <title>TechPeru - Formulario de Contacto</title>
+    <link rel="stylesheet" href="css/formulario.css"> <!-- O el nombre de tu archivo CSS -->
 </head>
 <body>
 
-  <!-- Encabezado corporativo TechPeru -->
-  <header class="main-header">
-    <div class="header-wrap">
-      <div class="brand">
-        <span class="brand-title">TechPeru</span>
-        <span class="brand-title-top">Formulario Oficial</span>
-      </div>
-      <div class="utility-buttons">
-        <a href="index.html">🌐 Volver al Inicio</a>
-      </div>
+    <!-- CABECERA CON BOTÓN DE IDIOMAS -->
+    <header class="main-header">
+        <div class="header-wrap">
+            <div class="brand">
+    <!-- El enlace envuelve al título y al subtítulo -->
+                    <a href="index.html" class="brand-link">
+                <span class="brand-title">TechPeru</span>
+                <span class="brand-title-top" class="lang-text" data-es="Formulario Oficial" data-en="Official Form">Formulario Oficial</span>
+                    </a>
+            </div>
+            <div class="utility-buttons">
+                <a href="index.html" class="btn-utility lang-text" data-es="🌐 Volver al Inicio" data-en="🌐 Back to Home">🌐 Volver al Inicio</a>
+                
+                <!-- Menú desplegable de Idiomas -->
+                <div class="lang-dropdown">
+                    <button id="langBtn" class="btn-utility">🌐 Idioma / Language</button>
+                    <div id="langPanel" class="lang-panel">
+                        <a href="#" class="lang-option" data-lang="es">Español</a>
+                        <a href="#" class="lang-option" data-lang="en">English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TARJETA DEL FORMULARIO -->
+    <div class="form-container">
+        <div class="form-banner-header">
+            <h2 class="lang-text" data-es="Registro de Datos Personales" data-en="Personal Data Registration">Registro de Datos Personales</h2>
+            <p class="lang-text" data-es="Precisión hoy, tecnología mañana" data-en="Precision today, technology tomorrow">Precisión hoy, tecnología mañana</p>
+        </div>
+
+        <form id="techperu-form">
+            <fieldset>
+                <!-- DNI -->
+                <div class="form-group">
+                    <label for="idPersona">
+                        <span class="lang-text" data-es="DNI Personal:" data-en="Personal ID (DNI):">DNI Personal:</span>
+                    </label>
+                    <input type="text" id="idPersona" name="idPersona" data-placeholder-es="Ingrese su DNI" data-placeholder-en="Enter your ID number" placeholder="Ingrese su DNI">
+                </div>
+
+                <!-- Nombre -->
+                <div class="form-group">
+                    <label for="nombre">
+                        <span class="lang-text" data-es="Nombre:" data-en="First Name:">Nombre:</span> <span class="required-mark">*</span>
+                    </label>
+                    <input type="text" id="nombre" name="nombre" required data-placeholder-es="Su nombre" data-placeholder-en="Your first name" placeholder="Su nombre">
+                </div>
+
+                <!-- Apellido -->
+                <div class="form-group">
+                    <label for="apellido">
+                        <span class="lang-text" data-es="Apellido:" data-en="Last Name:">Apellido:</span> <span class="required-mark">*</span>
+                    </label>
+                    <input type="text" id="apellido" name="apellido" required data-placeholder-es="Su apellido" data-placeholder-en="Your last name" placeholder="Su apellido">
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">
+                        <span class="lang-text" data-es="Email:" data-en="Email Address:">Email:</span>
+                    </label>
+                    <input type="email" id="email" name="email" data-placeholder-es="ejemplo@correo.com" data-placeholder-en="example@mail.com" placeholder="ejemplo@correo.com">
+                </div>
+
+                <!-- Edad -->
+                <div class="form-group">
+                    <label for="edad">
+                        <span class="lang-text" data-es="Edad:" data-en="Age:">Edad:</span>
+                    </label>
+                    <input type="number" id="edad" name="edad" data-placeholder-es="Su edad" data-placeholder-en="Your age" placeholder="Su edad">
+                </div>
+
+                <!-- Género -->
+                <div class="form-group">
+                    <label class="lang-text" data-es="Género" data-en="Gender">Género</label>
+                    <div class="options-grid">
+                        <label class="inline-option">
+                            <input type="radio" name="genero" value="femenino">
+                            <span class="lang-text" data-es="Femenino" data-en="Female">Femenino</span>
+                        </label>
+                        <label class="inline-option">
+                            <input type="radio" name="genero" value="masculino">
+                            <span class="lang-text" data-es="Masculino" data-en="Male">Masculino</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Departamento -->
+                <div class="location-box form-group">
+                    <label for="dep" class="lang-text" data-es="¿De qué lugar eres? (Departamento)" data-en="Where are you from? (State/Department)">¿De qué lugar eres? (Departamento)</label>
+                    <select id="dep" name="departamento">
+                        <option value="" class="lang-text" data-es="Selecciona tu departamento" data-en="Select your department">Selecciona tu departamento</option>
+                        <option value="Lima">Lima</option>
+                        <option value="Arequipa">Arequipa</option>
+                        <option value="Cusco">Cusco</option>
+                        <!-- Agrega los demás departamentos que tenías aquí -->
+                    </select>
+                </div>
+
+                <!-- Origen de conocimiento -->
+                <div class="form-group">
+                    <label class="lang-text" data-es="¿Cómo nos conoces?" data-en="How did you hear about us?">¿Cómo nos conoces?</label>
+                    <div class="options-grid">
+                        <label class="inline-option"><input type="checkbox" name="origen" value="youtube"> YouTube</label>
+                        <label class="inline-option"><input type="checkbox" name="origen" value="telegram"> Telegram</label>
+                        <label class="inline-option"><input type="checkbox" name="origen" value="instagram"> Instagram</label>
+                        <label class="inline-option"><input type="checkbox" name="origen" value="twitter"> X (Twitter)</label>
+                        <label class="inline-option">
+                            <input type="checkbox" name="origen" value="otros"> 
+                            <span class="lang-text" data-es="Otros" data-en="Others">Otros</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Comentario -->
+                <div class="form-group">
+                    <label for="comentario" class="lang-text" data-es="Comentario:" data-en="Comment:">Comentario:</label>
+                    <textarea id="comentario" name="comentario" rows="4" data-placeholder-es="Escribe algo..." data-placeholder-en="Write something..." placeholder="Escribe algo..."></textarea>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="form-actions">
+                    <input type="submit" class="btn-submit-main lang-text" data-es="Enviar" data-en="Submit" value="Enviar">
+                    <input type="submit" formnovalidate class="btn-submit-fast lang-text" data-es="Enviar sin validar" data-en="Submit without validation" value="Enviar sin validar">
+                    <input type="reset" class="btn-reset-form lang-text" data-es="Restablecer" data-en="Reset" value="Restablecer">
+                </div>
+            </fieldset>
+        </form>
     </div>
-  </header>
 
-  <!-- Contenedor Principal Estilizado -->
-  <main class="form-container">
-    <div class="form-banner-header">
-      <h2>Registro de Datos Personales</h2>
-      <p>Precisión hoy, tecnología mañana</p>
-    </div>
-
-    <form action="mi_servidor" id="techperu-form">
-      <fieldset>
-        
-        <!-- Campo Oculto original -->
-        <input type="hidden" id="sistema" name="sistema" value="SAP"/>
-
-        <!-- DNI -->
-        <div class="form-group">
-          <label for="idPersona">DNI Personal:</label>
-          <input type="text" id="idPersona" name="idPersona" placeholder="Escribe tu DNI" maxlength="8">
-        </div>
-
-        <!-- Nombre -->
-        <div class="form-group">
-          <label for="nombre">Nombre: <span class="required-mark">*</span></label>
-          <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
-        </div>
-
-        <!-- Apellido -->
-        <div class="form-group">
-          <label for="apellido">Apellido: <span class="required-mark">*</span></label>
-          <input type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido" required>
-        </div>
-
-        <!-- Email -->
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Escribe tu email">
-        </div>
-
-        <!-- Edad -->
-        <div class="form-group">
-          <label for="edad">Edad:</label>
-          <input type="number" id="edad" name="edad" placeholder="Escribe tu edad" min="0">
-        </div>
-
-        <!-- Género -->
-        <div class="form-group">
-          <label>Género</label>
-          <div class="options-grid">
-            <label class="inline-option" for="femenino">
-              <input type="radio" id="femenino" name="genero" value="femenino"/> Femenino
-            </label>
-            <label class="inline-option" for="masculino">
-              <input type="radio" id="masculino" name="genero" value="masculino"/> Masculino
-            </label>
-          </div>
-        </div>
-
-        <!-- Lugar de residencia -->
-        <div class="location-box">
-          <div class="form-group" style="margin-bottom: 0;">
-            <label for="Residencia">¿De qué lugar eres? (Departamento)</label>
-            <select id="Residencia" name="Residencia">
-              <option value="Selecciona" selected disabled>Selecciona tu departamento</option>
-              <option value="Amazonas">Amazonas</option>
-              <option value="Áncash">Áncash</option>
-              <option value="Apurímac">Apurímac</option>
-              <option value="Arequipa">Arequipa</option>
-              <option value="Ayacucho">Ayacucho</option>
-              <option value="Cajamarca">Cajamarca</option>
-              <option value="Cusco">Cusco</option>
-              <option value="Huancavelica">Huancavelica</option>
-              <option value="Huánuco">Huánuco</option>
-              <option value="Ica">Ica</option>
-              <option value="Junín">Junín</option>
-              <option value="La Libertad">La Libertad</option>
-              <option value="Lambayeque">Lambayeque</option>
-              <option value="Lima">Lima</option>
-              <option value="Loreto">Loreto</option>
-              <option value="Madre de Dios">Madre de Dios</option>
-              <option value="Moquegua">Moquegua</option>
-              <option value="Pasco">Pasco</option>
-              <option value="Piura">Piura</option>
-              <option value="Puno">Puno</option>
-              <option value="San Martín">San Martín</option>
-              <option value="Tacna">Tacna</option>
-              <option value="Tumbes">Tumbes</option>
-              <option value="Ucayali">Ucayali</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Redes Sociales -->
-        <div class="form-group">
-          <label>¿Cómo nos conoces?</label>
-          <div class="options-grid">
-            <label class="inline-option" for="YouTube">
-              <input type="checkbox" id="YouTube" name="Redes Sociales" value="YouTube"/> YouTube
-            </label>
-            <label class="inline-option" for="Telegram">
-              <input type="checkbox" id="Telegram" name="Redes Sociales" value="Telegram"/> Telegram
-            </label>
-            <label class="inline-option" for="Instagram">
-              <input type="checkbox" id="Instagram" name="Redes Sociales" value="Instagram"/> Instagram
-            </label>
-            <label class="inline-option" for="X (Twitter)">
-              <input type="checkbox" id="X (Twitter)" name="Redes Sociales" value="X (Twitter)"/> X (Twitter)
-            </label>
-            <label class="inline-option" for="Otros">
-              <input type="checkbox" id="Otros" name="Redes Sociales" value="Otros"/> Otros
-            </label>
-          </div>
-        </div>
-
-        <!-- Comentario -->
-        <div class="form-group">
-          <label for="comentario">Comentario:</label>
-          <textarea id="comentario" name="comentario" rows="3" placeholder="Coméntanos más sobre tus requerimientos..."></textarea>
-        </div>
-
-        <!-- Botonera -->
-        <div class="form-actions">
-          <input type="submit" value="Enviar" class="btn-submit-main">
-          <input type="submit" formnovalidate="formnovalidate" value="Enviar sin validar" class="btn-submit-fast">
-          <input type="reset" value="Restablecer" class="btn-reset-form">
-        </div>
-
-      </fieldset> 
-    </form>
-  </main>
-
-  <!-- Conexión con el archivo JavaScript externo -->
-  <script src="js/formulario.js"></script>
+    <script src="js/formulario.js"></script>
 </body>
 </html>
