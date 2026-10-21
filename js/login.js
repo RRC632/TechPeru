@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const langBtn = document.getElementById('langBtn');
     const langPanel = document.getElementById('langPanel');
 
+    // --- INICIALIZACIÓN DE SUPABASE CON TUS CREDENCIALES ---
+    const supabaseUrl = 'https://brelkbtbketukkoymulh.supabase.co';
+    const supabaseKey = 'sb_publishable_ID-Wtr_ca5gVB-MmrHY50w_tsBmFf4D';
+    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
     // --- MÓDULO DE TRADUCCIÓN ---
     if (langBtn && langPanel) {
         langBtn.addEventListener('click', (e) => {
@@ -48,16 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LOGICA DE LOGEO ---
+    // --- LÓGICA DE LOGIN CON SUPABASE ---
     if (loginForm) {
-        loginForm.addEventListener('submit', (event) => {
+        loginForm.addEventListener('submit', async (event) => {
             event.preventDefault(); 
             errorMessage.textContent = ''; 
 
             const userValue = userInput.value.trim();
             const passValue = passInput.value.trim();
-            const currentLang = document.documentElement.lang;
+            const currentLang = document.documentElement.lang || 'es';
 
+            // Validaciones locales previas
             if (userValue.length < 4) {
                 if (currentLang === 'en') {
                     errorMessage.textContent = 'The username or email must be at least 4 characters long.';
@@ -76,10 +82,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            if (currentLang === 'en') {
-                alert(`Attempting to log in with user: ${userValue}`);
-            } else {
-                alert(`Intentando iniciar sesión con el usuario: ${userValue}`);
+try {
+                // Consultamos directamente la tabla 'Registro'
+                const { data, error } = await supabase
+                    .from('Registro')
+                    .select('*')
+                    .eq('Correo', userValue)          // Columna exacta de tu tabla Registro
+                    .eq('Contraseña', passValue);     // Columna exacta de tu tabla Registro
+
+                if (error) {
+                    console.error('Error detallado de Supabase:', error);
+                    errorMessage.textContent = currentLang === 'en' 
+                        ? 'Database error: ' + error.message 
+                        : 'Error de base de datos: ' + error.message;
+                    return;
+                }
+
+                if (data && data.length > 0) {
+                    alert(currentLang === 'en' 
+                        ? `Welcome! Successfully logged in as: ${userValue}` 
+                        : `¡Bienvenido! Sesión iniciada correctamente como: ${userValue}`);
+                    window.location.href = 'index.html';
+                    // window.location.href = 'index.html'; // Redirección opcional
+                } else {
+                    errorMessage.textContent = currentLang === 'en' 
+                        ? 'Invalid email or password.' 
+                        : 'Correo o contraseña incorrectos.';
+                }
+
+            } catch (err) {
+                console.error('Error imprevisto:', err);
+                errorMessage.textContent = currentLang === 'en' 
+                    ? 'An unexpected error occurred.' 
+                    : 'Ocurrió un error inesperado.';
             }
         });
     }

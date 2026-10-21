@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const langBtn = document.getElementById('langBtn');
     const langPanel = document.getElementById('langPanel');
 
+    // Inicialización de Supabase con tus credenciales proporcionadas
+    const supabaseUrl = 'https://brelkbtbketukkoymulh.supabase.co';
+    const supabaseKey = 'sb_publishable_ID-Wtr_ca5gVB-MmrHY50w_tsBmFf4D';
+    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
     // --- MÓDULO DE TRADUCCIÓN ---
     if (langBtn && langPanel) {
         langBtn.addEventListener('click', (e) => {
@@ -31,16 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function traducirSitio(idioma) {
         document.documentElement.lang = idioma;
         
-        // Traducir textos y botones
         document.querySelectorAll('.lang-text').forEach(el => {
-            if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'reset')) {
-                el.value = el.getAttribute(`data-${idioma}`);
+            if (el.tagName === 'BUTTON' || (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'reset'))) {
+                el.textContent = el.getAttribute(`data-${idioma}`);
             } else {
                 el.textContent = el.getAttribute(`data-${idioma}`);
             }
         });
 
-        // Traducir Placeholders
         document.querySelectorAll('input[data-placeholder-es], textarea[data-placeholder-es]').forEach(input => {
             const ph = input.getAttribute(`data-placeholder-${idioma}`);
             if (ph) input.placeholder = ph;
@@ -65,35 +68,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (form) {
-        form.addEventListener('submit', (event) => {
-            const triggerButton = document.activeElement;
-            const currentLang = document.documentElement.lang;
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Evita que se recargue la página por defecto
+            const currentLang = document.documentElement.lang || 'es';
 
-            if (triggerButton && !triggerButton.hasAttribute('formnovalidate')) {
-                if (dniField.value.length > 0 && dniField.value.length !== 8) {
-                    event.preventDefault();
-                    if (currentLang === 'en') {
-                        alert('⚠️ Attention: The entered ID is invalid. It must contain exactly 8 digits.');
-                    } else {
-                        alert('⚠️ Atención: El DNI ingresado no es válido. Debe contener exactamente 8 dígitos.');
-                    }
-                    dniField.focus();
-                    return;
-                }
-                
-                if (currentLang === 'en') {
-                    alert('🚀 Success! Your form has been sent correctly to TechPeru servers.');
-                } else {
-                    alert('🚀 ¡Éxito! Tu formulario se ha enviado correctamente a los servidores de TechPeru.');
-                }
-            } else if (triggerButton && triggerButton.hasAttribute('formnovalidate')) {
-                if (currentLang === 'en') {
-                    alert('📝 Fast mode active: Sending data without system validation.');
-                } else {
-                    alert('📝 Modo rápido activado: Enviando datos sin validación del sistema.');
+            // Recolectar checkboxes de "¿Cómo nos conoces?" unidos por coma (ya que en Supabase la columna 'Conocer' es tipo varchar)
+            const origenes = Array.from(form.querySelectorAll('input[name="origen"]:checked'))
+                                  .map(cb => cb.value)
+                                  .join(', ');
+
+            // Mapeo exacto con los nombres de columnas de tu tabla "Contacto" en Supabase
+            const rowData = {
+                DNI:          dniField.value ? Number(dniField.value) : null,
+                Nombre:       form.nombre.value,
+                Apellido:     form.apellido.value,
+                Email:        form.email.value,
+                Edad:         form.edad.value ? Number(form.edad.value) : null,
+                Genero:       (form.querySelector('input[name="genero"]:checked') || {}).value || null,
+                Lugar:        form.departamento.value,
+                Conocer:      origenes,
+                Comentario:   form.comentario.value
+            };
+
+            // Inserción en la tabla 'Contacto' (respetando la C mayúscula tal como está en tu esquema)
+            const { error } = await supabase.from('Contacto').insert([rowData]);
+
+            if (error) {
+                alert(currentLang === 'en' ? '⚠️ Error saving: ' + error.message
+                                           : '⚠️ Error al guardar: ' + error.message);
+                console.error("Supabase Error:", error);
+            } else {
+                alert(currentLang === 'en'
+                  ? '🚀 Success! Your data has been saved to the database.'
+                  : '🚀 ¡Éxito! Tus datos se guardaron en la base de datos.');
+                form.reset();
+                if (dniField) {
+                    dniField.style.borderColor = "#cbd5e1";
+                    dniField.style.boxShadow = "none";
                 }
             }
-        });
+        });   
 
         form.addEventListener('reset', () => {
             if (dniField) {
