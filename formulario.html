@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>TechPeru - Formulario de Contacto</title>
-    <link rel="stylesheet" href="css/formulario.css"> <!-- O el nombre de tu archivo CSS -->
+    <link rel="stylesheet" href="css/formulario.css">
+    
+    <!-- Librería oficial de Supabase JS Client vía CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -11,11 +14,10 @@
     <header class="main-header">
         <div class="header-wrap">
             <div class="brand">
-    <!-- El enlace envuelve al título y al subtítulo -->
-                    <a href="index.html" class="brand-link">
-                <span class="brand-title">TechPeru</span>
-                <span class="brand-title-top" class="lang-text" data-es="Formulario Oficial" data-en="Official Form">Formulario Oficial</span>
-                    </a>
+                <a href="index.html" class="brand-link">
+                    <span class="brand-title">TechPeru</span>
+                    <span class="brand-title-top lang-text" data-es="Formulario Oficial" data-en="Official Form">Formulario Oficial</span>
+                </a>
             </div>
             <div class="utility-buttons">
                 <a href="index.html" class="btn-utility lang-text" data-es="🌐 Volver al Inicio" data-en="🌐 Back to Home">🌐 Volver al Inicio</a>
@@ -78,7 +80,7 @@
                     <label for="edad">
                         <span class="lang-text" data-es="Edad:" data-en="Age:">Edad:</span>
                     </label>
-                    <input type="number" id="edad" name="edad" data-placeholder-es="Su edad" data-placeholder-en="Your age" placeholder="Su edad">
+                    <input type="number" id="edad" name="edad" data-placeholder-es="Su edad" data-placeholder-en="Your age" placeholder="Su edad" min="18" max="99">
                 </div>
 
                 <!-- Género -->
@@ -86,25 +88,46 @@
                     <label class="lang-text" data-es="Género" data-en="Gender">Género</label>
                     <div class="options-grid">
                         <label class="inline-option">
-                            <input type="radio" name="genero" value="femenino">
+                            <input type="radio" name="genero" value="Femenino">
                             <span class="lang-text" data-es="Femenino" data-en="Female">Femenino</span>
                         </label>
                         <label class="inline-option">
-                            <input type="radio" name="genero" value="masculino">
+                            <input type="radio" name="genero" value="Masculino">
                             <span class="lang-text" data-es="Masculino" data-en="Male">Masculino</span>
                         </label>
                     </div>
                 </div>
 
                 <!-- Departamento -->
-                <div class="location-box form-group">
-                    <label for="dep" class="lang-text" data-es="¿De qué lugar eres? (Departamento)" data-en="Where are you from? (State/Department)">¿De qué lugar eres? (Departamento)</label>
-                    <select id="dep" name="departamento">
-                        <option value="" class="lang-text" data-es="Selecciona tu departamento" data-en="Select your department">Selecciona tu departamento</option>
-                        <option value="Lima">Lima</option>
+                <div class="form-group location-box">
+                    <label class="lang-text" data-es="¿De qué lugar eres? (Departamento)" data-en="Where are you from? (Department)">¿De qué lugar eres? (Departamento)</label>
+                        <select name="departamento" id="departamento" required>
+                        <option value="" disabled selected class="lang-text" data-es="Selecciona tu departamento" data-en="Select your department">Selecciona tu departamento</option>
+                        <option value="Amazonas">Amazonas</option>
+                        <option value="Ancash">Áncash</option>
+                        <option value="Apurimac">Apurímac</option>
                         <option value="Arequipa">Arequipa</option>
+                        <option value="Ayacucho">Ayacucho</option>
+                        <option value="Cajamarca">Cajamarca</option>
+                        <option value="Callao">Callao (Provincia Constitucional)</option>
                         <option value="Cusco">Cusco</option>
-                        <!-- Agrega los demás departamentos que tenías aquí -->
+                        <option value="Huancavelica">Huancavelica</option>
+                        <option value="Huanuco">Huánuco</option>
+                        <option value="Ica">Ica</option>
+                        <option value="Junin">Junín</option>
+                        <option value="La Libertad">La Libertad</option>
+                        <option value="Lambayeque">Lambayeque</option>
+                        <option value="Lima">Lima</option>
+                        <option value="Loreto">Loreto</option>
+                        <option value="Madre de Dios">Madre de Dios</option>
+                        <option value="Moquegua">Moquegua</option>
+                        <option value="Pasco">Pasco</option>
+                        <option value="Piura">Piura</option>
+                        <option value="Puno">Puno</option>
+                        <option value="San Martin">San Martín</option>
+                        <option value="Tacna">Tacna</option>
+                        <option value="Tumbes">Tumbes</option>
+                        <option value="Ucayali">Ucayali</option>
                     </select>
                 </div>
 
@@ -112,12 +135,12 @@
                 <div class="form-group">
                     <label class="lang-text" data-es="¿Cómo nos conoces?" data-en="How did you hear about us?">¿Cómo nos conoces?</label>
                     <div class="options-grid">
-                        <label class="inline-option"><input type="checkbox" name="origen" value="youtube"> YouTube</label>
-                        <label class="inline-option"><input type="checkbox" name="origen" value="telegram"> Telegram</label>
-                        <label class="inline-option"><input type="checkbox" name="origen" value="instagram"> Instagram</label>
-                        <label class="inline-option"><input type="checkbox" name="origen" value="twitter"> X (Twitter)</label>
+                        <label class="inline-option"><input type="checkbox" name="origen" value="YouTube"> YouTube</label>
+                        <label class="inline-option"><input type="checkbox" name="origen" value="Telegram"> Telegram</label>
+                        <label class="inline-option"><input type="checkbox" name="origen" value="Instagram"> Instagram</label>
+                        <label class="inline-option"><input type="checkbox" name="origen" value="X (Twitter)"> X (Twitter)</label>
                         <label class="inline-option">
-                            <input type="checkbox" name="origen" value="otros"> 
+                            <input type="checkbox" name="origen" value="Otros"> 
                             <span class="lang-text" data-es="Otros" data-en="Others">Otros</span>
                         </label>
                     </div>
@@ -131,10 +154,10 @@
 
                 <!-- Botones de Acción -->
                 <div class="form-actions">
-                    <input type="submit" class="btn-submit-main lang-text" data-es="Enviar" data-en="Submit" value="Enviar">
-                    <input type="submit" formnovalidate class="btn-submit-fast lang-text" data-es="Enviar sin validar" data-en="Submit without validation" value="Enviar sin validar">
-                    <input type="reset" class="btn-reset-form lang-text" data-es="Restablecer" data-en="Reset" value="Restablecer">
-                </div>
+    <input type="submit" class="btn-submit-main" value="Enviar">
+    <input type="submit" class="btn-submit-fast" value="Enviar sin validar">
+    <input type="reset" class="btn-reset-form" value="Restablecer">
+</div>
             </fieldset>
         </form>
     </div>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>TechPeru - Login</title>
     <link rel="stylesheet" href="css/login.css"> <!-- O el nombre de tu archivo CSS -->
+
+    <!-- Librería oficial de Supabase JS Client vía CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -11,11 +14,11 @@
     <header class="main-header">
         <div class="header-wrap">
             <div class="brand">
-    <!-- El enlace envuelve al título y al subtítulo -->
-                    <a href="index.html" class="brand-link">
-                <span class="brand-title">TechPeru</span>
-                <span class="brand-title-top" class="lang-text" data-es="Login" data-en="Login Panel">Login</span>
-                    </a>
+                <!-- El enlace envuelve al título y al subtítulo -->
+                <a href="index.html" class="brand-link">
+                    <span class="brand-title">TechPeru</span>
+                    <span class="brand-title-top lang-text" data-es="Login" data-en="Login Panel">Login</span>
+                </a>
             </div>
             <div class="utility-buttons">
                 <a href="index.html" class="btn-utility lang-text" data-es="🌐Volver al inicio" data-en="🌐Back to Home">🌐Volver al inicio</a>
@@ -42,8 +45,8 @@
                 <form id="loginForm">
                     <!-- Usuario -->
                     <div class="form-group">
-                        <label for="user" class="lang-text" data-es="Usuario / Correo:" data-en="Username / Email:">Usuario / Correo:</label>
-                        <input type="text" id="user" required data-placeholder-es="Ingrese usuario" data-placeholder-en="Enter username" placeholder="Ingrese usuario">
+                        <label for="user" class="lang-text" data-es="Correo:" data-en="Email:">Correo:</label>
+                        <input type="text" id="user" required data-placeholder-es="Ingrese correo" data-placeholder-en="Enter email" placeholder="Ingrese correo">
                     </div>
                     
                     <!-- Contraseña -->
@@ -63,7 +66,7 @@
             </div>
             <div class="login-footer">
                 <p>
-                    <a href="recuperar.html" class="lang-text" data-es="¿Olvilaste tu contraseña?" data-en="Forgot your password?">¿Olvilaste tu contraseña?</a>
+                    <a href="recuperar.html" class="lang-text" data-es="¿Olvidaste tu contraseña?" data-en="Forgot your password?">¿Olvidaste tu contraseña?</a>
                     <a href="index.html" class="lang-text" data-es="Regresar al Inicio" data-en="Return to Home">Regresar al Inicio</a>
                 </p>
             </div>
