@@ -1,0 +1,259 @@
+/* ==========================================================================
+   ESTILOS GENERALES Y RESET
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f6f9; /* Fondo gris claro idéntico */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   CABECERA COMPARTIDA (MAIN HEADER)
+   ========================================================================== */
+.main-header {
+    background-color: #1a252f; /* Azul oscuro */
+    color: #fff;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 0 0 8px 8px;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #3498db; /* Azul eléctrico */
+}
+
+.brand-title-top {
+    font-size: 11px;
+    color: #bdc3c7;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 2px;
+}
+
+.utility-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.utility-buttons a, .btn-utility {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    background-color: #34495e;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.3s;
+}
+
+.utility-buttons a:hover, .btn-utility:hover {
+    background-color: #3498db;
+}
+
+/* ==========================================================================
+   MENÚ FLOTANTE DE IDIOMAS (INTERNACIONALIZACIÓN)
+   ========================================================================== */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-panel {
+    display: none; /* JS añade .show para activarlo */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff00; /* Fondo sólido */
+    min-width: 130px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    margin-top: 8px;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid #cbd5e100;
+}
+
+.lang-panel.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.lang-option {
+    color: #ffffff !important;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: left;
+    background: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.lang-option:hover {
+    background-color: #f1f5f9 !important;
+    color: #3498db !important;
+}
+
+/* ==========================================================================
+   ESTILOS DE LA TARJETA DE LOGIN
+   ========================================================================== */
+.login-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 360px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.login-header {
+    background-color: #1a365d; /* Azul de servidores */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.login-header h2 {
+    font-size: 20px;
+}
+
+.login-content {
+    padding: 24px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.form-actions input[type="submit"] {
+    background-color: #1a365d;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.form-actions input[type="submit"]:hover {
+    background-color: #2a4d7c;
+}
+
+.form-actions input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.error-message {
+    color: #e53e3e;
+    font-size: 13px;
+    margin-top: 12px;
+    text-align: center;
+    min-height: 18px;
+    font-weight: 500;
+}
+
+.login-footer {
+    padding: 0 24px 24px 24px;
+    text-align: center;
+}
+
+.login-footer p a {
+    display: block;
+    color: #1a365d;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.login-footer p a:last-child {
+    margin-bottom: 0;
+}
+
+.login-footer p a:hover {
+    text-decoration: underline;
+    color: #3498db;
+}
+/* --- Estilos para el enlace de la marca --- */
+.brand-link {
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+    display: flex;
+    flex-direction: column; /* Mantiene el título arriba y el subtítulo abajo */
+    cursor: pointer; /* Hace que aparezca la manito del ratón al pasar por encima */
+}
+
+/* Opcional: Si notas que el color cambia al hacer clic, esto asegura que mantengan sus colores originales */
+.brand-link .brand-title {
+    color: #3498db; /* Tu azul eléctrico característico */
+}
+
+.brand-link .brand-title-top {
+    color: #bdc3c7; /* Tu gris claro corporativo */
+}
